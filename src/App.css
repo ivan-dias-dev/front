@@ -1,0 +1,344 @@
+:root {
+  --fundo: #151632;
+}
+
+@font-face {
+  font-family: fontesTitulos;
+  src: url("../public/fonts/Lovelo-Black.otf");
+}
+
+* {
+  font-weight: bold !important;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: var(--fundo)
+}
+
+.body {
+  background-color: var(--fundo);
+  min-height: 100vh;
+  height: 100%;
+  -webkit-font-smoothing: antialiased
+}
+
+/* ===================Navbar==============================================*/
+.navbar {
+  background-color: #08D1CE;
+  padding: 0.5em 2em 1.5em !important;
+  border-radius: 0 0 10px 10px;
+}
+
+li {
+  text-decoration: none !important;
+  background-color: rgb(255, 255, 255);
+  list-style-type: none;
+  border: 1px solid rgb(222, 222, 222);
+}
+
+
+a {
+  text-decoration: none !important;
+  color: rgb(141, 141, 141) !important;
+}
+
+
+a:hover {
+  color: white !important;
+}
+
+/* =====================Tabela============================================*/
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.table {
+  text-align: center;
+  width: 100% !important;
+  height: 10% !important;
+  border-collapse: collapse;
+
+}
+
+tbody {
+  text-align: center;
+  background-color: #A1AEB8;
+}
+
+td,
+th {
+  border: 1px solid #1e1e1e !important;
+}
+
+th {
+  font-family: fontesTitulos !important;
+  font-size: 1.1rem !important;
+  background-color: #08D1CE !important;
+}
+
+tr:nth-child(even) {
+  background: #D2E0EA
+}
+
+tr {
+  width: 3em !important;
+  border: 1px solid #1e1e1e;
+}
+
+
+td {
+  padding: 8px;
+  overflow: hidden;
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.8rem !important;
+}
+
+
+.bolder {
+  font-weight: bold;
+  font-size: large;
+}
+
+.col-md-2 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+
+.ativo {
+  background-color: #1182d6 !important;
+}
+
+#token,
+#valor {
+  display: none;
+}
+
+.nome {
+  text-align: center !important;
+  max-width: 20em !important;
+  text-overflow: hidden !important;
+}
+
+
+
+
+
+.row {
+  --bs-gutter-x: 0rem !important;
+}
+
+
+.Alta {
+  background-color: #08D13A !important;
+}
+
+.Media {
+  background-color: #E49902 !important;
+}
+
+.Baixa {
+  background-color: #A40F21 !important;
+}
+
+.Alta,
+.Media,
+.Baixa {
+  border-radius: 10px !important;
+  width: 10px !important;
+  height: 10px !important;
+  border: 1px solid black !important;
+  margin-right: 2px;
+}
+
+.alinhaBolinha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.carteiraNome {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.carteiraNome:hover {
+  cursor: pointer;
+}
+
+.carteiraNome::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.25s;
+  margin-right: 0.5rem;
+}
+
+
+
+.checkbox {
+  background-color: var(--fundo) !important;
+  border: none !important;
+  width: 10px !important;
+}
+
+.Tituloonn {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.Titulooff {
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.Tituloonn::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.25s;
+  color: white;
+  margin-right: 5px;
+  background-image: url("../public/Icons/arrowTop.svg");
+}
+
+.Titulooff::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.25s;
+  color: white;
+  margin-right: 5px;
+  background-image: url("../public/Icons/arrowDown.svg");
+}
+
+.secaoOnn {
+  display: block !important;
+  width: 100%;
+}
+
+.secaoOff {
+  display: none !important;
+}
+
+.Otima {
+  background-color: #E49902;
+}
+
+.Zap2go {
+  background-color: #91219D;
+
+}
+
+.botaoTitulo {
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+}
+
+.Robbu {
+  background-color: #29a4ff;
+}
+
+.naoEnviou {
+  background-color: #A40F21;
+}
+
+.filho {
+  width: 100%;
+}
+
+#robbu-section {
+  margin-bottom: 1em !important;
+}
+
+
+.CardTotal {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.botaoPai {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+
+/*  =====================Formulário============================================*/
+.form {
+  margin: 5rem;
+}
+
+.button {
+  margin: 0rem .2em;
+}
+
+.cardCarteiras {
+  background-color: aliceblue;
+  min-width: 10rem;
+  min-height: 10rem;
+  height: 100%;
+  padding: 10px;
+  margin-left: 1rem;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+#formularioCard {
+  width: 30em !important;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+
+.footer {
+  background-color: var(--fundo);
+  text-align: center;
+  color: #dcdcdc;
+  bottom: 0%;
+  width: 100%;
+  position: fixed;
+}
+
+.Home {
+  color: #ff2e63 !important;
+}
+
+.card-header {
+  width: 100%;
+}
