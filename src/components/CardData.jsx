@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import BotaoBandeira from "./BotaoBandeira";
+import styles from "./Card.module.css"
 
-function CardData({ Data, fornecedor, error }) {
-  // Estado para controlar a classe secao
+function CardData({ Data, fornecedor, error, data }) {
   const [secao, setSecao] = useState("secaoOnn");
 
-  // Função para alterar a classe secao com base no botão clicado
   function cardBotao(card) {
     if (card === "Titulooff") {
       setSecao("secaoOff");
     } else {
       setSecao("secaoOnn");
-      console.log(card);
     }
   }
   return (
     <section className="d-flex align-items-center justify-content-center">
+
       <div className="CardTotal">
         <div className="botaoPai">
           <BotaoBandeira fornecedor={fornecedor} cardBotao={cardBotao} />
+          <div className="dataAtualizada">{data}</div>
         </div>
         <div id="Zap2go-section" className={secao}>
           <table className="table">
@@ -39,11 +39,19 @@ function CardData({ Data, fornecedor, error }) {
               ) : Data.length > 0 ? (
                 Data.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.channelPhone || item.phone}</td>
-                    <td>{item.wallet || item.wallet_name}</td>
-                    <td>{item.channelLimit || item.rate}</td>
-                    <td>{item.channelStatus || item.status}</td>
-                    <td>{item.flViolada || item.armored}</td>
+                    <td className={styles.Numero}>{item.channelPhone || item.phone}</td>
+                    <td className={styles.Nome}>{item.wallet || item.wallet_name}</td>
+                    <td className={styles.Limite}>{item.channelLimit || item.rate}</td>
+                    <td >
+                      <div className="alinhaBolinha">
+                        <div className={item.channelQuality || item.status}></div>
+                        <div class="pe-1 selects" id={item.channelQuality || item.status}>{item.channelQuality || item.status}</div>
+                      </div>
+                    </td>
+                    <td className={styles.Sinalicao}>
+                      {item.flViolada === "Sinalizado" || item.armored === true || item.channelFlag === "FLAGGED" ? <div className={styles.alert}></div> : ""}
+                    </td>
+
                   </tr>
                 ))
               ) : (

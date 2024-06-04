@@ -1,22 +1,26 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/footer";
-import CardData from "./components/CardData";
-import useZapData from "./hooks/useZapData";
-import useRobbuData from "./hooks/useRobbuData";
+import Footer from "./components/Footer"; // Verifique a capitalização correta
+
+import Bandeiras from "./components/Bandeiras";
+import Logins from "./components/Logins";
+import Templates from "./components/Templates";
 
 function App() {
-  const { zapData, error } = useZapData();
-  const { robbuData, errorRobbu } = useRobbuData();
-
   return (
     <section className="App">
-      <div className="body">
+      <Router>
         <Header />
-        <CardData Data={zapData} fornecedor="Zap2go" error={error} />
-        <CardData Data={robbuData} fornecedor="Robbu" error={errorRobbu} />
+        <main>
+          <Routes>
+            <Route path="/" element={<Bandeiras />} />
+            <Route path="/logins" element={<Logins />} />
+            <Route path="/templates" element={<Templates />} />
+          </Routes>
+        </main>
         <Footer />
-      </div>
+      </Router>
     </section>
   );
 }

@@ -6,18 +6,13 @@ function cabecalho() {
           <a href="http://localhost:3000/" class="Home">Home</a>
         </button>
         <button type="button" class="btn btn-dark button">
-          <a href="http://localhost:3000/enviaLogins">Logins</a>
+          <a href="http://localhost:3000/Logins">Logins</a>
         </button>
         <button type="button" class="btn btn-dark button">
-          <a href="http://localhost:3000/radar">Radar</a>
-        </button>
-        <button type="button" class="btn btn-dark button">
-          <a href="http://localhost:3000/templates">Templates</a>
+          <a href="http://localhost:3000/Templates">Templates</a>
         </button>
       </div>
     </nav>
   )
 }
-
-
 export default cabecalho

@@ -1,0 +1,32 @@
+.alert {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.25s;
+    color: white;
+    margin-right: 5px;
+    background-image: url("../alert.svg");
+}
+
+
+
+.Sinalicao {
+    max-width: 2em !important;
+}
+
+.Limite {
+    max-width: 5em !important;
+}
+
+.Numero {
+    max-width: 25em;
+    width: 25em;
+}
+
+.Nome {
+    max-width: 38em;
+    width: 38em;
+}

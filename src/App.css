@@ -1,5 +1,6 @@
 :root {
   --fundo: #151632;
+  --fonteTexto: 1.5rem !important;
 }
 
 @font-face {
@@ -14,6 +15,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.bolder {
+  font-weight: bold;
+  font-size: large;
+}
+
 
 nav {
   background-color: var(--fundo)
@@ -62,12 +69,19 @@ ul {
   width: 100% !important;
   height: 10% !important;
   border-collapse: collapse;
-
 }
 
 tbody {
   text-align: center;
   background-color: #A1AEB8;
+}
+
+td {
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis !important;
+  font-size: 1rem !important;
 }
 
 td,
@@ -77,7 +91,7 @@ th {
 
 th {
   font-family: fontesTitulos !important;
-  font-size: 1.1rem !important;
+  font-size: var(--fonteTexto);
   background-color: #08D1CE !important;
 }
 
@@ -91,20 +105,8 @@ tr {
 }
 
 
-td {
-  padding: 8px;
-  overflow: hidden;
-  width: 200px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 0.8rem !important;
-}
 
 
-.bolder {
-  font-weight: bold;
-  font-size: large;
-}
 
 .col-md-2 {
   flex: 0 0 auto;
@@ -136,21 +138,29 @@ td {
 }
 
 
-.Alta {
+.Alta,
+.GREEN {
   background-color: #08D13A !important;
 }
 
-.Media {
+
+
+.Media,
+.YELLOW {
   background-color: #E49902 !important;
 }
 
-.Baixa {
+.Baixa,
+.RED {
   background-color: #A40F21 !important;
 }
 
 .Alta,
 .Media,
-.Baixa {
+.Baixa,
+.GREEN,
+.YELLOW,
+.RED {
   border-radius: 10px !important;
   width: 10px !important;
   height: 10px !important;
@@ -237,13 +247,20 @@ td {
   background-image: url("../public/Icons/arrowDown.svg");
 }
 
-.secaoOnn {
-  display: block !important;
+/* Inicialização das classes */
+.secaoOnn,
+.secaoOff {
+  overflow: hidden;
   width: 100%;
 }
 
+
+.secaoOnn {
+  max-height: 100%;
+}
+
 .secaoOff {
-  display: none !important;
+  max-height: 0;
 }
 
 .Otima {
@@ -341,4 +358,12 @@ td {
 
 .card-header {
   width: 100%;
+}
+
+.dataAtualizada {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 0 0 0 1em;
 }
