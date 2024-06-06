@@ -146,6 +146,7 @@ tr {
 
 
 .Media,
+.Média,
 .YELLOW {
   background-color: #E49902 !important;
 }
@@ -160,7 +161,8 @@ tr {
 .Baixa,
 .GREEN,
 .YELLOW,
-.RED {
+.RED,
+.Média {
   border-radius: 10px !important;
   width: 10px !important;
   height: 10px !important;
@@ -269,18 +271,27 @@ tr {
 
 .Zap2go {
   background-color: #91219D;
-
-}
-
-.botaoTitulo {
-  border-radius: 10px;
-  padding: 10px 20px;
-  color: white;
 }
 
 .Robbu {
   background-color: #29a4ff;
 }
+
+.Robbu,
+.Otima,
+.Zap2go {
+  cursor: pointer;
+}
+
+
+.botaoTitulo {
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 2rem;
+}
+
+
 
 .naoEnviou {
   background-color: #A40F21;
@@ -308,6 +319,7 @@ tr {
   align-items: center;
   justify-content: start;
   width: 100%;
+  margin: 0 0 31px 0;
 }
 
 

@@ -1,0 +1,6 @@
+.grupodeBotoesCriaLogin {
+    display: flex;
+    flex-direction: row;
+    gap: 10em;
+}
+

@@ -1,23 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BotaoBandeira from "./BotaoBandeira";
-import styles from "./Card.module.css"
+import styles from "./Card.module.css";
+
+const ITAU_WALLETS = [
+  "Itaú PF", "Itaú PF 2", "Itaú PF 3", "Itaú PF 4", "Itaú PF 5", "Itaú Veiculos", "Itaú Veiculos 2", "Itaú Imobiliario"
+];
 
 function CardData({ Data, fornecedor, error, data }) {
   const [secao, setSecao] = useState("secaoOnn");
+  const [classeTitulo, setClasseTitulo] = useState('Tituloonn');
 
-  function cardBotao(card) {
-    if (card === "Titulooff") {
-      setSecao("secaoOff");
-    } else {
-      setSecao("secaoOnn");
+  useEffect(() => {
+    if (fornecedor === "Robbu") {
+      const updatedData = Data.map(item => ({
+        ...item,
+        armored: ITAU_WALLETS.includes(item.wallet_name)
+      }));
+      console.log(updatedData);
     }
-  }
+  }, [Data, fornecedor]);
+
+  const alternarClasseTitulo = () => {
+    const newClass = classeTitulo === 'Tituloonn' ? 'Titulooff' : 'Tituloonn';
+    setClasseTitulo(newClass);
+    setSecao(newClass === 'Titulooff' ? 'secaoOff' : 'secaoOnn');
+  };
+
   return (
     <section className="d-flex align-items-center justify-content-center">
-
       <div className="CardTotal">
         <div className="botaoPai">
-          <BotaoBandeira fornecedor={fornecedor} cardBotao={cardBotao} />
+          <div className={classeTitulo} onClick={alternarClasseTitulo}>
+            <BotaoBandeira fornecedor={fornecedor} />
+          </div>
           <div className="dataAtualizada">{data}</div>
         </div>
         <div id="Zap2go-section" className={secao}>
@@ -39,19 +54,22 @@ function CardData({ Data, fornecedor, error, data }) {
               ) : Data.length > 0 ? (
                 Data.map((item, index) => (
                   <tr key={index}>
-                    <td className={styles.Numero}>{item.channelPhone || item.phone}</td>
-                    <td className={styles.Nome}>{item.wallet || item.wallet_name}</td>
-                    <td className={styles.Limite}>{item.channelLimit || item.rate}</td>
-                    <td >
+                    <td className={styles.Numero}>{item.channelPhone || item.phone || item.numero}</td>
+                    <td className={styles.Nome}>{item.wallet || item.wallet_name || item.centroCusto}</td>
+                    <td className={styles.Limite}>{item.channelLimit || item.rate || item.limite}</td>
+                    <td>
                       <div className="alinhaBolinha">
-                        <div className={item.channelQuality || item.status}></div>
-                        <div class="pe-1 selects" id={item.channelQuality || item.status}>{item.channelQuality || item.status}</div>
+                        <div className={item.channelQuality || item.saude || item.centroCusto || item.status}></div>
+                        <div className="pe-1 selects" id={item.channelQuality || item.saude || item.status}>
+                          {item.channelQuality || item.saude || item.status}
+                        </div>
                       </div>
                     </td>
                     <td className={styles.Sinalicao}>
-                      {item.flViolada === "Sinalizado" || item.armored === true || item.channelFlag === "FLAGGED" ? <div className={styles.alert}></div> : ""}
+                      {item.flViolada === "Sinalizado" || item.armored === true || item.channelFlag === "FLAGGED" || item.status === "Sinalizado" ? (
+                        <div className={styles.alert}></div>
+                      ) : ""}
                     </td>
-
                   </tr>
                 ))
               ) : (
