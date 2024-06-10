@@ -4,13 +4,11 @@
 }
 
 @font-face {
-  font-family: fontesTitulos;
+  font-family: Lovelo;
   src: url("../public/fonts/Lovelo-Black.otf");
 }
 
 * {
-  font-weight: bold !important;
-  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -36,9 +34,13 @@ nav {
 /* ===================Navbar==============================================*/
 .navbar {
   background-color: #08D1CE;
-  padding: 0.5em 2em 1.5em !important;
-  border-radius: 0 0 10px 10px;
+  border-radius: 8px;
+  margin-top: 1em;
+  padding: 1em 2em;
+  gap: 1.5em;
+  font-family: Lovelo !important;
 }
+
 
 li {
   text-decoration: none !important;
@@ -62,9 +64,12 @@ a:hover {
 ul {
   text-decoration: none;
   list-style-type: none;
+
 }
 
 .table {
+  font-weight: bold !important;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   width: 100% !important;
   height: 10% !important;
@@ -90,7 +95,7 @@ th {
 }
 
 th {
-  font-family: fontesTitulos !important;
+  font-family: Lovelo !important;
   font-size: var(--fonteTexto);
   background-color: #08D1CE !important;
 }
@@ -285,10 +290,13 @@ tr {
 
 
 .botaoTitulo {
-  border-radius: 10px;
-  padding: 10px;
-  color: white;
-  font-size: 2rem;
+  color: #FFF;
+  font-family: Lovelo;
+  font-size: 40px;
+  font-style: normal;
+  line-height: normal;
+  border-radius: 25px;
+  padding: 20px 30px;
 }
 
 

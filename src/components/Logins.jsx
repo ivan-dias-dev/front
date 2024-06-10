@@ -1,4 +1,5 @@
 import BotaoBandeira from "./BotaoBandeira";
+import CardLogin from "./CardLogin";
 import Styles from "./Logins.module.css"
 
 function Logins() {
@@ -10,6 +11,10 @@ function Logins() {
                     <BotaoBandeira fornecedor="Zap2go" />
                     <BotaoBandeira fornecedor="Robbu" />
                 </div>
+
+            </div>
+            <div className="d-flex justify-content-center p-5">
+                <CardLogin />
             </div>
 
         </div>
