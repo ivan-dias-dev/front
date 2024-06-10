@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function BotaoBandeira({ fornecedor, cardBotao }) {
 
   return (
-    <div className={`botaoTitulo ${fornecedor}`}>{fornecedor}</div>
+    <button className={`botaoTitulo ${fornecedor}`}>{fornecedor}</button>
   );
 
 }
