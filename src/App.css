@@ -257,7 +257,7 @@ tr {
 /* Inicialização das classes */
 .secaoOnn,
 .secaoOff {
-  overflow: hidden;
+  overflow: auto;
   width: 100%;
 }
 
