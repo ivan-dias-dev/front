@@ -2,23 +2,13 @@ import React, { useState, useEffect } from 'react';
 import BotaoBandeira from "./BotaoBandeira";
 import styles from "./Card.module.css";
 
-const ITAU_WALLETS = [
-  "Itaú PF", "Itaú PF 2", "Itaú PF 3", "Itaú PF 4", "Itaú PF 5", "Itaú Veiculos", "Itaú Veiculos 2", "Itaú Imobiliario"
-];
 
 function CardData({ Data, fornecedor, error, data }) {
   const [secao, setSecao] = useState("secaoOnn");
   const [classeTitulo, setClasseTitulo] = useState('Tituloonn');
 
-  useEffect(() => {
-    if (fornecedor === "Robbu") {
-      const updatedData = Data.map(item => ({
-        ...item,
-        armored: ITAU_WALLETS.includes(item.wallet_name)
-      }));
-      console.log(updatedData);
-    }
-  }, [Data, fornecedor]);
+  
+
 
   const alternarClasseTitulo = () => {
     const newClass = classeTitulo === 'Tituloonn' ? 'Titulooff' : 'Tituloonn';

@@ -284,19 +284,25 @@ tr {
 
 .Robbu,
 .Otima,
-.Zap2go {
+.Zap2go,
+.criar {
   cursor: pointer;
+}
+
+.criar {
+  margin-top: 1em;
+  background-color: #FF2E63;
 }
 
 
 .botaoTitulo {
   color: #FFF;
   font-family: Lovelo;
-  font-size: 35px;
+  font-size: 32px;
   font-style: normal;
   line-height: normal;
   border-radius: 20px;
-  padding: 15px 25px;
+  padding: 5px 15px;
 }
 
 
@@ -370,10 +376,6 @@ tr {
   bottom: 0%;
   width: 100%;
   position: fixed;
-}
-
-.Home {
-  color: #ff2e63 !important;
 }
 
 .card-header {

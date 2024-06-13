@@ -13,34 +13,40 @@
     border: 1px solid #000;
     background: #353664;
     padding: 3em 2.5em;
+
 }
 
 
-.InputLogin,
-.InputLogin2 {
-    width: 100%;
-    color: #FF2E63;
-    font-family: Lovelo;
-    font-size: 2em;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
+
+.InputLogin>.centroCusto {
+    width: 80%;
 }
 
 
-input {
-    width: 100%;
+.InputLogin>textarea {
+    width: 80%;
+}
+
+input,
+textarea {
+    background: #DAE6E6;
     fill: #DAE6E6;
     border: 1px solid #08D1CE;
     border-radius: 5px;
     background: #DAE6E6;
+    font-size: 22px;
+    padding: 10px;
+    height: 2em;
+    width: 100%;
 }
 
-textarea {
-    width: 100%;
-    background: #DAE6E6;
-    border: 1px solid #08D1CE;
-    border-radius: 5px;
+
+#cpf {
+    width: 80% !important;
+}
+
+form {
+    width: 80%;
 }
 
 .PaiBlocotNomeCPF {
@@ -55,7 +61,32 @@ textarea {
 .BlocotNomeCPF {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
     gap: 2em;
+}
+
+.InputLogin,
+.InputLogin2 {
+    width: 100%;
+    color: #FF2E63;
+    font-family: Lovelo;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputLogin2 {
+    align-items: flex-start;
+}
+
+.botaoCriar {
+    margin-top: 10em;
 }
 
 .cpf,
@@ -64,6 +95,36 @@ textarea {
     margin-bottom: 0.5em;
 }
 
-textarea {
-    height: 1.5em;
+.centraliza {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3em;
+}
+
+
+
+.cardStatusLogin,
+.cardStatusLoginExistentes {
+    border: 4px solid;
+    min-height: 97px;
+    min-width: 300px;
+    margin-top: 52px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardStatusLoginExistentes {
+    color: #c5283d;
+}
+
+.cardStatusLogin {
+    color: #0D9744;
+}
+
+.logins {
+    color: white;
 }

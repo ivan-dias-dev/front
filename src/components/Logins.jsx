@@ -13,10 +13,9 @@ function Logins() {
                     <BotaoBandeira fornecedor="Robbu" />
                 </div>
             </div>
-            <div className="d-flex justify-content-center">
+            <div >
                 <CardLogin />
             </div>
-
         </div>
     )
 }
