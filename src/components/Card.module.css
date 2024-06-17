@@ -11,6 +11,17 @@
     background-image: url("../alert.svg");
 }
 
+.bolinhas {
+    display: flex;
+    justify-content: center;
+}
+
+.naoMandouBase {
+    th {
+        background-color: #A40F21 !important;
+        color: white
+    }
+}
 
 .Sinalicao {
     max-width: 2em !important;
@@ -28,4 +39,10 @@
 .Nome {
     max-width: 38em;
     width: 38em;
+}
+
+input {
+    background-color: #08D1CE !important;
+    width: 15px !important;
+    height: 15px !important;
 }

@@ -13,7 +13,7 @@ function CardLogin() {
     const [cardOpenClosed, setCardOpenClosed] = useState(false);
     const [animacao, setAnimacao] = useState('none');
     const animationRef = useRef(null);
-
+    console.log("animacao", animacao)
     function separarNome(inputNome) {
         return inputNome.split("\n").map(nome => nome.trim());
     }
@@ -37,23 +37,19 @@ function CardLogin() {
         e.preventDefault();
         const nomes = separarNome(nome);
         const cpfs = separarCpfs(CPF, centroCusto);
-
         const formData = { centroCusto, nomes, cpfs };
-
         try {
             const response = await fetch('http://localhost:3005/enviaLogins', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
-
             if (response.ok) {
                 const data = await response.json();
                 setCardOpenClosed(true);
-
                 if (animationRef.current) {
-                    animationRef.current.goToAndPlay(0, true);
                     setAnimacao('block');
+                    animationRef.current.goToAndPlay(0, true);
                     setTimeout(() => {
                         if (animationRef.current) {
                             animationRef.current.stop();
@@ -61,7 +57,6 @@ function CardLogin() {
                         }
                     }, 3000);
                 }
-
                 setLoginsCriados(data.loginsCriados);
                 setLoginsJaExistentes(data.loginsExistente);
             } else {
@@ -76,42 +71,48 @@ function CardLogin() {
     };
     return (
         <div className={Styles.centraliza}>
-            {cardOpenClosed && (
-                <div className={Styles.CardSubmit}>
-                    <button onClick={() => setCardOpenClosed(false)} className={Styles.close}>
-                        <XCircle size={32} color="#08D1CE" />
-                    </button>
-                    <Created styleAnimation={styleAnimation} animationRef={animationRef} />
-                    <div className={Styles.centraliza}>
-                        {loginsJaExistentes.length > 0 && (
-                            <div className={Styles.cardStatusLoginExistentes}>
-                                <div className={Styles.logins}>
-                                    <h3>Logins Existentes:</h3>
-                                    <div>
-                                        {loginsJaExistentes.map((login, index) => (
-                                            <div key={index}>{login}<br /></div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                        {loginsCriados.length > 0 && (
-                            <div className={Styles.centraliza}>
-                                <div className={Styles.cardStatusLogin}>
+            {
+                cardOpenClosed && (
+                    <div className={Styles.CardSubmit}>
+                        <button onClick={() => setCardOpenClosed(false)} className={Styles.close}>
+                            <XCircle size={32} color="#08D1CE" />
+                        </button>
+                        <Created styleAnimation={styleAnimation} animationRef={animationRef} />
+                        <div className={Styles.centraliza}>
+                            {loginsJaExistentes.length > 0 && (
+                                <div className={Styles.cardStatusLoginExistentes}>
                                     <div className={Styles.logins}>
-                                        <h1>Logins Criados!</h1>
+                                        <h3>Logins Existentes:</h3>
                                         <div>
-                                            {loginsCriados.map((login, index) => (
-                                                <div key={index}>{login}<br /></div>
-                                            ))}
+                                            {
+                                                loginsJaExistentes.map((login, index) => (
+                                                    <div key={index}>{login}<br /></div>
+                                                ))
+                                            }
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                            {loginsCriados.length > 0 && (
+                                <div className={Styles.centraliza}>
+                                    <div className={Styles.cardStatusLogin}>
+                                        <div className={Styles.logins}>
+                                            <h1>Logins Criados!</h1>
+                                            <div>
+                                                {
+                                                    loginsCriados.map((login, index) => (
+                                                        <div key={index}>{login}<br /></div>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                </div>
-            )}
+                )
+            }
             <form onSubmit={handleSubmit}>
                 <div className={Styles.cardLogin}>
                     <div className="d-flex justify-content-center">
