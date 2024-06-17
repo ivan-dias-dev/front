@@ -375,7 +375,7 @@ tr {
   color: #dcdcdc;
   bottom: 0%;
   width: 100%;
-  position: fixed;
+  position: static;
 }
 
 .card-header {

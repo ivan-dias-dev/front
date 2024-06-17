@@ -7,7 +7,7 @@ function CardData({ Data, fornecedor, error, data }) {
   const [secao, setSecao] = useState("secaoOnn");
   const [classeTitulo, setClasseTitulo] = useState('Tituloonn');
 
-  
+
 
 
   const alternarClasseTitulo = () => {

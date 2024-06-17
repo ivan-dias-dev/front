@@ -1,4 +1,4 @@
-function cabecalho() {
+function cabecalho(select) {
   return (
     <nav class="d-flex justify-content-center header">
       <div class="navbar">

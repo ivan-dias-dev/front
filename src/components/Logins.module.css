@@ -13,7 +13,6 @@
     border: 1px solid #000;
     background: #353664;
     padding: 3em 2.5em;
-
 }
 
 
@@ -95,21 +94,42 @@ form {
     margin-bottom: 0.5em;
 }
 
-.centraliza {
+
+.centraliza,
+.centralizaFundo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 3em;
+    padding: .2em;
 }
 
+.close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.CardSubmit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0D0D2B;
+    border: 4px solid #08D1CE;
+    min-width: 40%;
+    min-height: 20em;
+    z-index: 1;
+    position: absolute;
+    top: 40%;
+    border-radius: 20px;
+}
 
 
 .cardStatusLogin,
 .cardStatusLoginExistentes {
     border: 4px solid;
-    min-height: 97px;
-    min-width: 300px;
-    margin-top: 52px;
+    min-width: 20em;
     border-radius: 20px;
     display: flex;
     flex-direction: column;

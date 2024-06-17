@@ -2,8 +2,9 @@ import BotaoBandeira from "./BotaoBandeira";
 import CardLogin from "./CardLogin";
 import Styles from "./Logins.module.css"
 
-function Logins() {
 
+
+function Logins() {
     return (
         <div className="body" id="body">
             <div className="d-flex justify-content-center p-5">
@@ -13,6 +14,7 @@ function Logins() {
                     <BotaoBandeira fornecedor="Robbu" />
                 </div>
             </div>
+
             <div >
                 <CardLogin />
             </div>
