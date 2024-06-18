@@ -18,6 +18,8 @@ function CardData({ Data, fornecedor, error, data }) {
 
     if (e.target.checked) {
       setSemBase(prevSemBase => [...prevSemBase, { fornecedor, numero, carteira, limite, l }]);
+    }else{
+      
     }
   }
 
