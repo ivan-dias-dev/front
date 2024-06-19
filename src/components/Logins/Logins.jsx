@@ -1,4 +1,4 @@
-import BotaoBandeira from "./BotaoBandeira";
+import BotaoBandeira from "../BotaoBandeira";
 import CardLogin from "./CardLogin";
 import Styles from "./Logins.module.css"
 

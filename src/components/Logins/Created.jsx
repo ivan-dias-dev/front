@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import v from "./animações/v.json";
+import v from "../animações/v.json";
 
 function Created({ styleAnimation, animationRef }) {
     return (

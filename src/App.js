@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"; // Verifique a capitalização correta
 
 import Bandeiras from "./components/Bandeiras";
-import Logins from "./components/Logins";
+import Logins from "./components/Logins/Logins";
 import Templates from "./components/Templates";
 
 function App() {
