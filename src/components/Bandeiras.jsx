@@ -18,7 +18,8 @@ function Bandeiras() {
         locale: ptBr,
     })
     const DateFormattedInText = "Atualizado em " + DateFormatted;
-    console.log(OtimaData, zapData, robbuData)
+
+    
     let dadosGerais = [...OtimaData, ...zapData, ...robbuData]
     console.log(dadosGerais)
     return (

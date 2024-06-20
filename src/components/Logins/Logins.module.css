@@ -137,6 +137,11 @@ form {
     align-items: center;
 }
 
+.selectZap2go {
+    background-color: #000;
+    width: 200px;
+}
+
 .cardStatusLoginExistentes {
     color: #c5283d;
 }

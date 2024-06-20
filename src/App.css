@@ -241,6 +241,10 @@ tr {
   background-image: url("../public/Icons/arrowTop.svg");
 }
 
+/* .undefined {
+  background-color: #363636 !important;
+} */
+
 .Titulooff::before {
   content: "";
   display: inline-block;
@@ -302,7 +306,8 @@ tr {
   font-style: normal;
   line-height: normal;
   border-radius: 20px;
-  padding: 5px 15px;
+  padding: 10px 20px;
+  border: none;
 }
 
 

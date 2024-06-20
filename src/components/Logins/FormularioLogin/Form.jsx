@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import BotaoBandeira from "../../BotaoBandeira";
 import Styles from "../Logins.module.css";
 
-function Form(setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes) {
+function Form({ setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes, fornecedor }) {
     const [centroCusto, setCentroCusto] = useState('');
     const [nome, setNome] = useState('');
     const [CPF, setCPF] = useState('');
@@ -12,7 +12,7 @@ function Form(setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes) {
     function separarNome(inputNome) {
         return inputNome.split("\n").map(nome => nome.trim());
     }
-
+    // console.log("fornecedor", fornecedor)
     function separarCpfs(inputCpfs, carteiras) {
         const cpfsArray = inputCpfs.split("\n").map(cpf => cpf.replace(/[.-]/g, "").trim());
 
@@ -61,21 +61,29 @@ function Form(setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes) {
     return (
         <form onSubmit={handleSubmit}>
             <div className={Styles.cardLogin}>
-                <div className="d-flex justify-content-center">
-                    <div className={Styles.InputLogin}>
-                        <div className={Styles.centroCusto}>Centro de Custo</div>
-                        <textarea
-                            required
-                            value={centroCusto}
-                            onChange={(e) => setCentroCusto(e.target.value)}
-                        />
-                    </div>
-                </div>
+
+                {fornecedor === "Robbu" ? "" :
+                    <div className="d-flex justify-content-center">
+                        <div className={Styles.InputLogin}>
+                            <div className={Styles.centroCusto}>
+                                {
+                                    fornecedor === "Otima" ? "Centro de Custo" : fornecedor === "Zap2go" ? "Código do grupo" : "Código do grupo"
+                                }
+                            </div>
+                            <textarea
+                                required
+                                placeholder={fornecedor === "Otima" ? "Centro de Custo" : fornecedor === "Zap2go" ? "Código do grupo" : "Código do grupo"}
+                                value={centroCusto}
+                                onChange={(e) => setCentroCusto(e.target.value)}
+                            />
+                        </div>
+                    </div>}
                 <div className={Styles.PaiBlocotNomeCPF}>
                     <div className={Styles.BlocotNomeCPF}>
                         <div className={Styles.InputLogin2}>
-                            <div className={Styles.nome}>Nome</div>
+                            <div className={Styles.nome}>{fornecedor !== "Robbu" ? "Nome" : "Referência"}</div>
                             <textarea
+                                placeholder={fornecedor !== "Robbu" ? "Nome" : "Referência"}
                                 required
                                 value={nome}
                                 onChange={(e) => setNome(e.target.value)}
@@ -84,6 +92,7 @@ function Form(setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes) {
                         <div className={Styles.InputLogin2}>
                             <div className={Styles.cpf}>CPF</div>
                             <textarea
+                                placeholder="CPF"
                                 value={CPF}
                                 onChange={(e) => setCPF(e.target.value)}
                             />
@@ -91,7 +100,7 @@ function Form(setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes) {
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <BotaoBandeira fornecedor="criar" />
+                    <BotaoBandeira fornecedor="criar" botaoSelecionado="criar" />
                 </div>
             </div>
         </form>
