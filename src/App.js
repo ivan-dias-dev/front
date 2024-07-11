@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer"; // Verifique a capitalização correta
 
-import Bandeiras from "./components/Bandeiras";
+import Robbu from "./components/Bandeiras/Robbu";
+import Otima from "./components/Bandeiras/Otima";
+import Zap2go from "./components/Bandeiras/Zap";
 import Logins from "./components/Logins/Logins";
 import Templates from "./components/Templates";
 
@@ -13,11 +15,15 @@ function App() {
       <Router>
         <Header />
         <main>
-          <Routes>
-            <Route path="/" element={<Bandeiras />} />
-            <Route path="/logins" element={<Logins />} />
-            <Route path="/templates" element={<Templates />} />
-          </Routes>
+          <div className="body">
+            <Routes>
+              <Route path="/robbu" element={<Robbu />} />
+              <Route path="/logins" element={<Logins />} />
+              <Route path="/templates" element={<Templates />} />
+              <Route path="/Otima" element={<Otima />} />
+              <Route path="/Zap2go" element={<Zap2go />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </Router>

@@ -8,21 +8,19 @@ export default function useOtimaData() {
     async function fetchOtimaData() {
       console.log("entramo");
       try {
-        const response = await fetch("http://localhost:3005/otima", {
+        const response = await fetch("http://localhost:3005/pegaDadosOtima", {
           method: "GET",
         });
 
         if (!response.ok) {
           throw new Error(`Erro ao fazer requisição: ${response.statusText}`);
         }
-
         const data = await response.json();
         setOtimaData(data);
       } catch (error) {
         setError(error.message);
       }
     }
-
     fetchOtimaData();
   }, []);
 

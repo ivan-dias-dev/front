@@ -68,7 +68,7 @@ function CardData({ Data, fornecedor, error, data }) {
                       <td>
                         <div className="alinhaBolinha">
                           <div className={item.channelQuality || item.saude || item.centroCusto || item.status}></div>
-                          {item.flViolada === "Sinalizado" || item.armored === true || item.channelFlag === "FLAGGED" || item.status === "Sinalizado" ? (
+                          {item.armored === "1" || item.channelFlag === "FLAGGED" || item.status === 1 ? (
                             <div className={styles.alert}></div>
                           ) : ""}
                           <div className="pe-1 selects" id={item.channelQuality || item.saude || item.status}>

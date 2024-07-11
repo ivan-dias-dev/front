@@ -16,6 +16,7 @@ export default function useRobbuData() {
   //     robbuData.splice(i + 1, 1);
   //   }
   // }
+
   useEffect(() => {
     async function fetchRobbuData() {
       try {
@@ -38,5 +39,12 @@ export default function useRobbuData() {
     fetchRobbuData();
   }, []);
 
+  for (let i = 0; i < robbuData.length - 1; i++) {
+    let status = robbuData[i].status;
+    if (status === "RED") {
+      status = "Baixa";
+      console.log(status, robbuData[i]);
+    }
+  }
   return { robbuData, errorRobbu };
 }

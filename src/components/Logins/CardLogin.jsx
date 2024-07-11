@@ -4,7 +4,7 @@ import Created from "./Created";
 import { XCircle } from "@phosphor-icons/react";
 import Form from "../Logins/FormularioLogin/Form";
 
-function CardLogin({ fornecedor }) {
+function CardLogin({ fornecedor, foiClicado }) {
     const [loginsCriados, setLoginsCriados] = useState([]);
     const [loginsJaExistentes, setLoginsJaExistentes] = useState([]);
     const [cardOpenClosed, setCardOpenClosed] = useState(false);
@@ -14,7 +14,6 @@ function CardLogin({ fornecedor }) {
         width: 200,
         display: animacao,
     };
-    // console.log("mid", fornecedor)
     return (
         <div className={Styles.centraliza}>
             {
@@ -54,13 +53,18 @@ function CardLogin({ fornecedor }) {
                         </div>
                     </div>
                 )}
-            <Form
-                fornecedor={fornecedor}
-                setAnimacao={setAnimacao}
-                setCardOpenClosed={setCardOpenClosed}
-                setLoginsCriados={setLoginsCriados}
-                setLoginsJaExistentes={setLoginsJaExistentes}
-            />
+            {
+                foiClicado ?
+                    <Form
+                        fornecedor={fornecedor}
+                        setAnimacao={setAnimacao}
+                        setCardOpenClosed={setCardOpenClosed}
+                        setLoginsCriados={setLoginsCriados}
+                        setLoginsJaExistentes={setLoginsJaExistentes}
+                    />
+                    : ""
+            }
+
         </div>
     );
 }

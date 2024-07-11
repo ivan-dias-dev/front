@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer class="d-flex justify-content-center footer">
-            <div class="col-md-3">Developed by Digital Team</div>
+            <h2 class="col-md-3">Desenvolvido por Ivan Dias</h2>
         </footer>
     )
 }

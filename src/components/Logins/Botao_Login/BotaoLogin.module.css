@@ -1,0 +1,32 @@
+.botaoTitulo {
+    color: #FFF;
+    font-family: Lovelo;
+    font-size: 32px;
+    font-style: normal;
+    line-height: normal;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.unselectedBotao {
+    background-color: #353664;
+}
+
+.Otima {
+    background-color: #E49902;
+}
+
+.Zap2go {
+    background-color: #91219D;
+}
+
+.Robbu {
+    background-color: #29a4ff;
+}
+
+.Robbu,
+.Otima,
+.Zap2go {
+    cursor: pointer;
+}

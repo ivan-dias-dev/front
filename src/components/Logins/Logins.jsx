@@ -1,27 +1,43 @@
-import BotaoBandeira from "../BotaoBandeira";
+import React, { useState } from "react";
+import BotaoBandeira from "./Botao_Login/BotaoLogin";
 import CardLogin from "./CardLogin";
 import Styles from "./Logins.module.css";
-import { useState } from "react";
 
 function Logins() {
     const [botaoClicado, setBotaoClicado] = useState("");
-    // console.log(botaoClicado, "mehh")
-    function setaBotaoClicado(fornecedor) {
+    const [foiClicado, setfoiClicado] = useState(false);
+
+    const handleButtonClick = (fornecedor) => {
         setBotaoClicado(fornecedor);
-    }
-    // console.log("original", botaoClicado)
+        setfoiClicado(true);
+    };
 
     return (
         <div className="body" id="body">
             <div className="d-flex justify-content-center p-5">
                 <div className={Styles.grupodeBotoesCriaLogin}>
-                    <BotaoBandeira fornecedor="Otima" botaoSelecionado={botaoClicado} onClick={() => setaBotaoClicado("Otima")} />
-                    <BotaoBandeira fornecedor="Zap2go" botaoSelecionado={botaoClicado} onClick={() => setaBotaoClicado("Zap2go")} />
-                    <BotaoBandeira fornecedor="Robbu" botaoSelecionado={botaoClicado} onClick={() => setaBotaoClicado("Robbu")} />
+                    <BotaoBandeira
+                        fornecedor="Otima"
+                        botaoSelecionado={botaoClicado}
+                        foiClicado={foiClicado}
+                        onClick={handleButtonClick}
+                    />
+                    <BotaoBandeira
+                        fornecedor="Zap2go"
+                        botaoSelecionado={botaoClicado}
+                        foiClicado={foiClicado}
+                        onClick={handleButtonClick}
+                    />
+                    <BotaoBandeira
+                        fornecedor="Robbu"
+                        botaoSelecionado={botaoClicado}
+                        foiClicado={foiClicado}
+                        onClick={handleButtonClick}
+                    />
                 </div>
             </div>
             <div>
-                <CardLogin fornecedor={botaoClicado} />
+                <CardLogin fornecedor={botaoClicado} foiClicado={foiClicado} />
             </div>
         </div>
     );

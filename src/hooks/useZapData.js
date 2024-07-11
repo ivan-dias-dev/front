@@ -7,7 +7,7 @@ export default function useZapData() {
   useEffect(() => {
     async function fetchZapData() {
       try {
-        const response = await fetch("http://localhost:3005/pegadadosZap", {
+        const response = await fetch("http://localhost:3005/pegaDadosZap", {
           method: "GET",
         });
 
@@ -25,5 +25,11 @@ export default function useZapData() {
     fetchZapData();
   }, []);
 
+  for (let i = 0; i < zapData.length - 1; i++) {
+    let waba = zapData[i].channelStatus;
+    if (waba === "Não registrado") {
+      zapData[i].channelQuality = "Baixa";
+    }
+  }
   return { zapData, error };
 }
