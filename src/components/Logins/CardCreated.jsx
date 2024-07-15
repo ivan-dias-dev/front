@@ -2,13 +2,14 @@ import React, { useState, useRef } from "react";
 import Styles from "./Logins.module.css";
 import Created from "./Created";
 import { XCircle } from "@phosphor-icons/react";
-import Form from "../Logins/FormularioLogin/Form";
+import Form from "./FormularioLogin/Form";
+
 
 function CardLogin({ fornecedor, foiClicado }) {
     const [loginsCriados, setLoginsCriados] = useState([]);
     const [loginsJaExistentes, setLoginsJaExistentes] = useState([]);
     const [cardOpenClosed, setCardOpenClosed] = useState(false);
-    const [animacao, setAnimacao] = useState('none');
+    const [animacao, setAnimacao] = useState('block');
     const animationRef = useRef(null);
     const styleAnimation = {
         width: 200,
@@ -22,7 +23,8 @@ function CardLogin({ fornecedor, foiClicado }) {
                         <button onClick={() => setCardOpenClosed(false)} className={Styles.close}>
                             <XCircle size={32} color="#08D1CE" />
                         </button>
-                        <Created styleAnimation={styleAnimation} animationRef={animationRef} />
+                        <Created styleAnimation={styleAnimation} animationRef={animationRef} setAnimacao={setAnimacao} />
+
                         <div className={Styles.centraliza}>
                             {loginsJaExistentes.length > 0 && (
                                 <div className={Styles.cardStatusLoginExistentes}>

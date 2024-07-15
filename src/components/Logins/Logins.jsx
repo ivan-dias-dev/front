@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BotaoBandeira from "./Botao_Login/BotaoLogin";
-import CardLogin from "./CardLogin";
+import CardLogin from "./CardCreated";
 import Styles from "./Logins.module.css";
 
 function Logins() {

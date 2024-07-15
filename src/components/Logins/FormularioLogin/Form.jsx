@@ -1,23 +1,33 @@
 import React, { useState, useRef, useEffect } from "react";
 import Styles from "../Logins.module.css";
+import Lottie from "lottie-react";
+import Loading from "../../animações/Loading.json";
 
 function Form({ setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes, fornecedor }) {
     const [centroCusto, setCentroCusto] = useState('');
     const [nome, setNome] = useState('');
     const [CPF, setCPF] = useState('');
-    const [animacao, setAnimacao] = useState(false);
+    const [animacao, setAnimacao] = useState('block');
     const [isLoading, setIsLoading] = useState(false);
     const animationRef = useRef(null);
     const timeoutRef = useRef(null);
-    console.log(animacao, animationRef);
-
-    useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
+    const animation2Ref = useRef(null);
+    
+    if (animation2Ref.current) {
+        setAnimacao(true);
+        animation2Ref.current.goToAndPlay(0, true);
+        animation2Ref.current = setTimeout(() => {
+            if (animation2Ref.current) {
+                animation2Ref.current.stop();
+                setAnimacao(false);
             }
-        };
-    }, []);
+        }, 3000);
+    }
+
+    const styleAnimation = {
+        width: 200,
+        display: animacao
+    };
 
     function separarNome(inputNome) {
         return inputNome.split("\n").map(nome => nome.trim());
@@ -87,6 +97,7 @@ function Form({ setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes, forn
         }
     };
 
+
     return (
         <form onSubmit={enviaForm}>
             <div className={Styles.cardLogin}>
@@ -133,6 +144,16 @@ function Form({ setCardOpenClosed, setLoginsCriados, setLoginsJaExistentes, forn
                     >
                         {isLoading ? 'Enviando...' : 'Enviar'}
                     </button>
+
+                </div>
+                <div>
+                    <Lottie
+                        animationData={Loading}
+                        style={styleAnimation}
+                        lottieRef={animationRef}
+                        autoplay={false}
+                        loop={false}
+                    />
                 </div>
             </div>
         </form>
